@@ -21,7 +21,8 @@ import update from "./components/update.vue";
 import { useNav } from "@/layout/hooks/useNav";
 import type { FormInstance } from "element-plus";
 import { $t, transformI18n } from "@/plugins/i18n";
-import { operates, thirdParty } from "./utils/enums";
+//import { operates, thirdParty } from "./utils/enums";
+import { operates } from "./utils/enums";
 import { useLayout } from "@/layout/hooks/useLayout";
 import { useUserStoreHook } from "@/store/modules/user";
 import { initRouter, getTopMenu } from "@/router/utils";
@@ -120,7 +121,7 @@ watch(loginDay, value => {
 <template>
   <div class="select-none">
     <img :src="bg" class="wave" />
-    <div class="flex-c absolute right-5 top-3">
+    <div class="absolute flex-c right-5 top-3">
       <!-- 主题 -->
       <el-switch
         v-model="dataTheme"
@@ -294,12 +295,12 @@ watch(loginDay, value => {
             </Motion>
           </el-form>
 
-          <Motion v-if="currentPage === 0" :delay="350">
+          <!-- <Motion v-if="currentPage === 0" :delay="350">
             <el-form-item>
               <el-divider>
-                <p class="text-gray-500 text-xs">{{ t("login.thirdLogin") }}</p>
+                <p class="text-xs text-gray-500">{{ t("login.thirdLogin") }}</p>
               </el-divider>
-              <div class="w-full flex justify-evenly">
+              <div class="flex w-full justify-evenly">
                 <span
                   v-for="(item, index) in thirdParty"
                   :key="index"
@@ -308,12 +309,12 @@ watch(loginDay, value => {
                   <IconifyIconOnline
                     :icon="`ri:${item.icon}-fill`"
                     width="20"
-                    class="cursor-pointer text-gray-500 hover:text-blue-400"
+                    class="text-gray-500 cursor-pointer hover:text-blue-400"
                   />
                 </span>
               </div>
             </el-form-item>
-          </Motion>
+          </Motion> -->
           <!-- 手机号登录 -->
           <phone v-if="currentPage === 1" />
           <!-- 二维码登录 -->

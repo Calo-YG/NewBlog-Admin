@@ -197,7 +197,7 @@ const tabsRouter = {
     }
   ]
 };
-
+//  data: [systemRouter, permissionRouter, frameRouter, tabsRouter];
 export default [
   {
     url: "/get-async-routes",
@@ -205,7 +205,7 @@ export default [
     response: () => {
       return {
         success: true,
-        data: [systemRouter, permissionRouter, frameRouter, tabsRouter]
+        data: [systemRouter, permissionRouter]
       };
     }
   }
